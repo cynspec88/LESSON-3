@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <form onsubmit="verifyUser(); return false;">
+        <label for="usernameInput">Username:</label>
+        <input type="text" id="usernameInput"/><br/>
+        <label for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput"/><br/>
+        <p id="message"></p>
+        <button type="submit">Log in</button>
+    </form>
+    <script>
+        function verifyUser(){
+            var username = document.getElementById("usernameInput").value;
+            var password = document.getElementById("passwordInput").value;
+
+            if(username === "Bond" && password === "007") {
+                document.getElementById("message").innerHTML = "Login successful!";
+            } else {
+                document.getElementById("message").innerHTML = "Invalid username or password.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>String and Numbers</title>
+</head>
+<body>
+    <p id="outputText"></p>
+    <script>
+        function stringToNumber(text) {
+            return parseInt(text);
+        }
+
+        var text1 = "10";
+        var text2 = "2";
+
+        var num1 = stringToNumber(text1);
+        var num2 = stringToNumber(text2);
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById("outputText").innerHTML = "One or both values are not valid numbers.";
+        } else if (num1 > num2) {
+            document.getElementById("outputText").innerHTML = "The first number is greater than the second number";
+        } else if (num1 < num2) {
+            document.getElementById("outputText").innerHTML = "The first number is less than the second number";
+        } else {
+            document.getElementById("outputText").innerHTML = "Both numbers are equal";
+        }
+        // If you want to show the subtraction result as well, add another line or display both.
+        // document.getElementById("outputText").innerHTML += "<br>Difference: " + (num1 - num2);
+    </script>
+</body>
+</html>

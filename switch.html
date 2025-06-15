@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Weather Switch Example</title>
+</head>
+<body>
+    <div class="weather-container">
+        <label for="weather">What's the weather like?</label>
+        <select id="weather">
+            <option value="sunny">Sunny</option>
+            <option value="windy">Windy</option>
+            <option value="rainy">Rainy</option>
+            <option value="snowy">Snowy</option>
+            <option value="cloudy">Cloudy</option>
+        </select>
+        <a href="#" id="goBtn">GO!</a>
+        <p id="outputText">Weather advice: </p>
+    </div>
+    <script>
+        document.getElementById("goBtn").addEventListener("click", function(e) {
+            e.preventDefault();
+            var weather = document.getElementById("weather").value;
+            var outputText = document.getElementById("outputText");
+
+            switch (weather) {
+                case "sunny":
+                    outputText.innerHTML = "It's sunny! Wear sunglasses and sunscreen.";
+                    break;
+                case "windy":
+                    outputText.innerHTML = "It's windy! Hold onto your hat.";
+                    break;
+                case "rainy":
+                    outputText.innerHTML = "It's rainy! Don't forget your umbrella.";
+                    break;
+                case "snowy":
+                    outputText.innerHTML = "It's snowy! Wear warm clothes and boots.";
+                    break;
+                case "cloudy":
+                    outputText.innerHTML = "It's cloudy! A light jacket might be needed.";
+                    break;
+                default:
+                    outputText.innerHTML = "Weather condition not recognized.";
+            }
+        });
+    </script>
+</body>
+</html>
